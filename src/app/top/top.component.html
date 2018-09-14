@@ -1,0 +1,148 @@
+<div class="loading">
+  <div class="wrapper">
+    <div class="cssload-loader"></div>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="block">
+          <p><a *ngIf="isLogged==true">{{user.email}}</a></p>
+          <!-- Extra small button group -->
+          <div class="btn-group">
+            <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ENGLISH <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">English</a></li>
+              <li><a href="#">France</a></li>
+              <li><a href="#">Germany</a></li>
+              <li><a href="#">Japanese</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="block align-right">
+          <a href="#">Help center</a>
+          <a href="#">online support</a>
+          <!-- Register Section -->
+          <a (click)="logout()" *ngIf="isLogged==true">Log out</a>
+          <a *ngIf="!isLogged" data-toggle="modal" data-target="#registerModal" data-whatever="@mdo">register</a>
+          <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerlLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="registerlLabel">Register Now</h4>
+                </div>
+                <div class="modal-body">
+                  <form class="rex-forms">
+                    <div class="form-group">
+                      <input [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="fast-name" placeholder="Fast Name">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="last-name" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="email-name" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="pass-word" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="user.confirmpassword" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="re-pass-word" placeholder="Re-Password">
+                    </div>
+                    <div class="form-group">
+                    <input [(ngModel)]="user.datenaissance" [ngModelOptions]="{standalone: true}" type="date" class="form-control">
+                    </div>  
+                    <div class="form-group">
+                      <input [(ngModel)]="user.tel" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="tel" placeholder="Tel">
+                    </div>
+                    <div class="alert" *ngIf="loginMessage">{{loginMessage}}</div>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button (click)="register()" class="rex-bottom-medium rex-btn-icon">
+                    <span class="rex-btn-text">registration</span>
+                    <span class="rex-btn-text-icon"><i class="fa fa-arrow-circle-o-right"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a href="#"><i class="fa fa-lock"></i>LOG in </a> -->
+          <a *ngIf="isLogged==false" data-toggle="modal" data-target="#loginModal" data-whatever="@mdo"><i class="fa fa-lock"></i>LOG in </a>
+          <!-- Login Option -->
+          <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="loginLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                  <form class="rex-forms">
+                    <div class="form-group">
+                      <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="recipient-name" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="pass_word" placeholder="Password">
+                    </div>
+                    <div class="alert" *ngIf="loginMessage">{{loginMessage}}</div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button (click)="login()" class="rex-bottom-medium rex-btn-icon">
+                    <span class="rex-btn-text">Login</span>
+                    <span class="rex-btn-text-icon"><i class="fa fa-arrow-circle-o-right"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="rex-main-content">
+  <!-- Navigation Html
+=================== -->
+  <div class="main-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="logo">
+            <a routerLink="">
+              <img class="img-responsive" src="assets/img/logo.png" alt="">
+            </a>
+          </div>
+          <div class="menu-container">
+            <div class="menu">
+              <ul class="main-ul">
+                <li><a routerLink="" class="{{c1}}">Home</a></li>
+                <li><a routerLink="cours" class="{{c2}}">Courses</a></li>
+                <li><a routerLink="apropos" class="{{c3}}">About</a>
+                  <li><a routerLink="contact" class="{{c4}}">Contact</a>
+              </ul>
+            </div>
+            <div class="menu-search">
+              <button id="test" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+              <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+                <div class="search-input">
+                  <input type="text" class="form-control" placeholder="What do you want to learn today?">
+                  <button class="rex-bottom-medium rex-btn-icon search-btn" type="submit">
+                    <span class="rex-btn-text"><i class="fa fa-search"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

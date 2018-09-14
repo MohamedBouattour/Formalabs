@@ -1,0 +1,249 @@
+<!-- Breadcum section -->
+<section class="breadcum">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Single Course</h4>
+        <div class="pages">
+          <a href="index-2.html">Home</a>
+          <span>&#47;</span>
+          <a href="index-2.html">Courses</a>
+          <span>&#47;</span>
+          <a href="about_page.html">Single Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- course_detail -->
+<section class="course_detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <!-- title section -->
+        <div class="sidebar-title-section">
+          <h2>{{session?.cour?.libelle}}</h2>
+        </div>
+        <!-- end -->
+        <!-- Single courses img section -->
+        <div class="single-img">
+          <img class="assets/img-responsive" src="assets/img/single_courses/single_course-image.jpg" alt="">
+        </div>
+        <!-- end -->
+        <!-- description section -->
+        <div class="description">
+          <h4>DESCRIPTION</h4>
+          <p>{{session?.cour?.description}}.</p>
+        </div>
+        <!-- end -->
+        <!-- learning list section -->
+        <div class="learning-list">
+          <h4>What You'll Learn</h4>
+          <ul>
+            <li *ngFor="let programme of session.programmes">
+              <p>{{programme.titre}}</p>
+            </li>
+          </ul>
+        </div>
+        <!-- end -->
+        <!-- Share Section -->
+        <div class="share_section">
+          <div class="col-md-6">
+            <a (click)="reserver()" class="rex-bottom-medium rex-btn-icon">
+                                    <span class="rex-btn-text">Enroll now</span>
+                                    <span class="rex-btn-text-icon"><i class="fa fa-arrow-circle-o-right"></i></span>
+                                </a>
+
+          </div>
+          <div class="col-md-6">
+            <div class="media-section">
+              <h6>SHARE THIS COURSE</h6>
+              <div class="instructors-media-link">
+                <a data-toggle="tooltip" data-placement="top" title="Go facebook Profile" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a data-toggle="tooltip" data-placement="top" title="Go twitter Profile" href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                <a data-toggle="tooltip" data-placement="top" title="Go Google plus Profile" href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a>
+                <a data-toggle="tooltip" data-placement="top" title="Go linkedin Profile" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+        <div class="clearfix"></div>
+        <div class="review">
+          <h4>Course Reviews</h4>
+          <div class="comments">
+            <div class="comments-img">
+              <img src="assets/img/comments-pic-img1.png" alt="">
+            </div>
+            <div class="comments-content">
+              <div class="comments-title">
+                <h6>Ahmed Diaa</h6>
+                <span>2 weeks ago</span>
+              </div>
+              <div class="rating">
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aene
+                <br> an sollicitudin, lorem quis bibendum</p>
+            </div>
+          </div>
+          <div class="comments">
+            <div class="comments-img">
+              <img src="assets/img/comments-pic-img2.png" alt="">
+            </div>
+            <div class="comments-content">
+              <div class="comments-title">
+                <h6>Ahmed Diaa</h6>
+                <span>2 weeks ago</span>
+              </div>
+              <div class="rating">
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aene
+                <br> an sollicitudin, lorem quis bibendum</p>
+            </div>
+          </div>
+          <div class="comments">
+            <div class="comments-img">
+              <img src="assets/img/comments-pic-img3.png" alt="">
+            </div>
+            <div class="comments-content">
+              <div class="comments-title">
+                <h6>Ahmed Diaa</h6>
+                <span>2 weeks ago</span>
+              </div>
+              <div class="rating">
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aene
+                <br> an sollicitudin, lorem quis bibendum</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-form">
+          <div class="review-form-title">
+            <h4>Write a review</h4>
+          </div>
+          <p>Your Rating</p>
+          <div class="select-rating">
+            <i class="fa fa fa-star-o"></i>
+            <i class="fa fa fa-star-o"></i>
+            <i class="fa fa fa-star-o"></i>
+            <i class="fa fa fa-star-o"></i>
+            <i class="fa fa fa-star-o"></i>
+          </div>
+          <form class="rex-forms">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="email" class="form-control" placeholder="Your Email">
+            </div>
+            <div class="form-group col-md-12">
+              <textarea class="form-control" placeholder="Your Review" rows="3"></textarea>
+            </div>
+            <button class="rex-bottom-medium rex-btn-icon">
+              <span class="rex-btn-text">post review</span>
+              <span class="rex-btn-text-icon"><i class="fa fa-arrow-circle-o-right"></i></span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <!-- coures reat -->
+        <div class="course-reating">
+          <a href="#" target="_self" class="rex-bottom-medium rex-btn-icon">
+                                <span class="rex-btn-text">Take this course</span>
+                                <span class="rex-btn-text-icon btn-text"> {{session.prix}} DT</span>
+                            </a>
+        </div>
+        <aside class="widget widget_archive coures-reat">
+          <ul>
+            <li><a href="#"><i class="fa fa-clock-o"></i>Length:</a>&nbsp; 9 weeks</li>
+            <li><a href="#"><i class="fa fa-briefcase"></i>Type:</a>&nbsp; Verified</li>
+            <li><a href="#"><i class="fa fa-tags"></i>Price:</a>&nbsp; $49</li>
+            <li><a href="#"><i class="fa fa-comments"></i>Languages:</a>&nbsp;English</li>
+            <li><a href="#"><i class="fa fa-video-camera"></i>Video :</a>&nbsp;English</li>
+          </ul>
+        </aside>
+        <!-- coures details -->
+        <aside class="widget">
+          <h5>instructor</h5>
+          <div class="instructor-content instructor">
+            <div class="instruction-sidbar-img">
+              <img src="assets/img/comments-pic-img1.png" alt="">
+            </div>
+            <div class="instruction-sidbar-title">
+              <h6>Simon Thomas</h6>
+              <span>Behavioural Science</span>
+            </div>
+            <div class="instructors-media-link">
+              <a data-toggle="tooltip" data-placement="top" title="Go facebook Profile" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+              <a data-toggle="tooltip" data-placement="top" title="Go twitter Profile" href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+              <a data-toggle="tooltip" data-placement="top" title="Go facebook Profile" href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a>
+              <a data-toggle="tooltip" data-placement="top" title="Go linkedin Profile" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </aside>
+        <aside class="widget featured-section">
+          <h5>FEATURED COURSES</h5>
+          <div class="instructor-content">
+            <div class="instructor-img">
+              <img src="assets/img/single_courses/sidebar-img1.png" alt="">
+            </div>
+            <div class="instruction-sidbar-title">
+              <a href="#"><h6>Water Management</h6></a>
+              <span class="date">Starts: Jan 11, 2016</span>
+              <p>By <a href="#">Eric Grimson</a></p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="instructor-content">
+            <div class="instructor-img">
+              <img src="assets/img/single_courses/sidebar-img2.png" alt="">
+            </div>
+            <div class="instruction-sidbar-title">
+              <a href="#"><h6>healthy food healthy</h6></a>
+              <span class="date">Starts: Jan 11, 2016</span>
+              <p>By <a href="#">John Guttag</a></p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="instructor-content">
+            <div class="instructor-img">
+              <img src="assets/img/single_courses/sidebar-img3.png" alt="">
+            </div>
+            <div class="instruction-sidbar-title">
+              <a href="#"><h6>How to Write a Novel</h6></a>
+              <span class="date">Starts: Jan 11, 2016</span>
+              <p>By <a href="#">Eric Grimson</a></p>
+            </div>
+          </div>
+        </aside>
+        <aside class="widget widget_archive">
+          <h5>Availability</h5>
+          <ul>
+            <li><a href="#">December  2015</a>&nbsp;12</li>
+            <li><a href="#">November 2015</a>&nbsp;05</li>
+            <li><a href="#">September 2015</a>&nbsp;09</li>
+            <li><a href="#">October 2015</a>&nbsp;03</li>
+            <li><a href="#">September 2015</a>&nbsp;07</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

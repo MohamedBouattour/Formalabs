@@ -1,0 +1,64 @@
+<!-- Breadcum section -->
+<section class="breadcum">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>COURSES GRID</h4>
+        <div class="pages">
+          <a href="index-2.html">Home</a>
+          <span>&#47;</span>
+          <a href="about_page.html">Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- courses_page -->
+<section class="courses_page">
+  <div class="container">
+    <div id="products" class="row list-group">
+
+      <!--ng for-->
+
+      <div class="item  col-sm-12 col-md-6 col-lg-4" *ngFor="let session of sessions">
+        <div class="block-content">
+          <div class="courses-img">
+            <img src="{{session?.cour.photo}}" alt="">
+            <div class="courses-overlay">
+              <h6>{{session?.prix}}</h6>
+            </div>
+          </div>
+          <div class="content">
+            <!-- tag -->
+            <div class="tag">
+              <i class="fa fa-bookmark"></i>
+            </div>
+            <!-- end tag -->
+            <a (click)="setID(session.id)" routerLink="../detailcours"><h6>{{session?.libelle}}</h6></a>
+            <div class="entry-meta">
+              <div class="author">
+                <p>By <a href="#">{{session?.nbheurs}}</a></p>
+              </div>
+              <div class="date">
+                <p>Starts: Jan 11, 2016</p>
+              </div>
+            </div>
+            <p class="description">{{session?.cour.description}}.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end about list -->
+    <div class="col-md-12 courses_page_btn2">
+      
+      <nav>
+        <ul class="pagination">
+          <li><a aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
+          <li class="active"><a>1 <span class="sr-only">(current)</span></a></li>
+          
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</section>
